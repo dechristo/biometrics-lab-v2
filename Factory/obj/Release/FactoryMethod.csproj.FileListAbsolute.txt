@@ -1,0 +1,65 @@
+C:\Projetos\BiometricsLab\Factory\bin\Release\FactoryMethod.dll
+C:\Projetos\BiometricsLab\Factory\bin\Release\FactoryMethod.pdb
+C:\Projetos\BiometricsLab\Factory\bin\Release\Image.Filters.dll
+C:\Projetos\BiometricsLab\Factory\bin\Release\AForge.Imaging.dll
+C:\Projetos\BiometricsLab\Factory\bin\Release\AForge.dll
+C:\Projetos\BiometricsLab\Factory\bin\Release\AForge.Math.dll
+C:\Projetos\BiometricsLab\Factory\bin\Release\Image.Filters.pdb
+C:\Projetos\BiometricsLab\Factory\bin\Release\AForge.Imaging.xml
+C:\Projetos\BiometricsLab\Factory\bin\Release\AForge.xml
+C:\Projetos\BiometricsLab\Factory\bin\Release\AForge.Math.xml
+C:\Projetos\BiometricsLab\Factory\obj\Release\FactoryMethod.csprojResolveAssemblyReference.cache
+C:\Projetos\BiometricsLab\Factory\obj\Release\FactoryMethod.dll
+C:\Projetos\BiometricsLab\Factory\obj\Release\FactoryMethod.pdb
+C:\Projetos\BiometricsLab - v3\Factory\bin\Release\FactoryMethod.dll
+C:\Projetos\BiometricsLab - v3\Factory\bin\Release\FactoryMethod.pdb
+C:\Projetos\BiometricsLab - v3\Factory\bin\Release\Image.Filters.dll
+C:\Projetos\BiometricsLab - v3\Factory\bin\Release\AForge.Imaging.dll
+C:\Projetos\BiometricsLab - v3\Factory\bin\Release\AForge.dll
+C:\Projetos\BiometricsLab - v3\Factory\bin\Release\AForge.Math.dll
+C:\Projetos\BiometricsLab - v3\Factory\bin\Release\Image.Filters.pdb
+C:\Projetos\BiometricsLab - v3\Factory\bin\Release\AForge.Imaging.xml
+C:\Projetos\BiometricsLab - v3\Factory\bin\Release\AForge.xml
+C:\Projetos\BiometricsLab - v3\Factory\bin\Release\AForge.Math.xml
+C:\Projetos\BiometricsLab - v3\Factory\obj\Release\FactoryMethod.csprojResolveAssemblyReference.cache
+C:\Projetos\BiometricsLab - v3\Factory\obj\Release\FactoryMethod.dll
+C:\Projetos\BiometricsLab - v3\Factory\obj\Release\FactoryMethod.pdb
+C:\Projetos\BiometricsLab - v4\Factory\bin\Release\FactoryMethod.dll
+C:\Projetos\BiometricsLab - v4\Factory\bin\Release\FactoryMethod.pdb
+C:\Projetos\BiometricsLab - v4\Factory\bin\Release\Image.Filters.dll
+C:\Projetos\BiometricsLab - v4\Factory\bin\Release\AForge.Imaging.dll
+C:\Projetos\BiometricsLab - v4\Factory\bin\Release\AForge.dll
+C:\Projetos\BiometricsLab - v4\Factory\bin\Release\AForge.Math.dll
+C:\Projetos\BiometricsLab - v4\Factory\bin\Release\Image.Filters.pdb
+C:\Projetos\BiometricsLab - v4\Factory\bin\Release\AForge.Imaging.xml
+C:\Projetos\BiometricsLab - v4\Factory\bin\Release\AForge.xml
+C:\Projetos\BiometricsLab - v4\Factory\bin\Release\AForge.Math.xml
+C:\Projetos\BiometricsLab - v4\Factory\obj\Release\FactoryMethod.csprojResolveAssemblyReference.cache
+C:\Projetos\BiometricsLab - v4\Factory\obj\Release\FactoryMethod.dll
+C:\Projetos\BiometricsLab - v4\Factory\obj\Release\FactoryMethod.pdb
+C:\Projetos\BiometricsLab - v5\Factory\bin\Release\FactoryMethod.dll
+C:\Projetos\BiometricsLab - v5\Factory\bin\Release\FactoryMethod.pdb
+C:\Projetos\BiometricsLab - v5\Factory\bin\Release\Image.Filters.dll
+C:\Projetos\BiometricsLab - v5\Factory\bin\Release\AForge.Imaging.dll
+C:\Projetos\BiometricsLab - v5\Factory\bin\Release\AForge.dll
+C:\Projetos\BiometricsLab - v5\Factory\bin\Release\AForge.Math.dll
+C:\Projetos\BiometricsLab - v5\Factory\bin\Release\Image.Filters.pdb
+C:\Projetos\BiometricsLab - v5\Factory\bin\Release\AForge.Imaging.xml
+C:\Projetos\BiometricsLab - v5\Factory\bin\Release\AForge.xml
+C:\Projetos\BiometricsLab - v5\Factory\bin\Release\AForge.Math.xml
+C:\Projetos\BiometricsLab - v5\Factory\obj\Release\FactoryMethod.csprojResolveAssemblyReference.cache
+C:\Projetos\BiometricsLab - v5\Factory\obj\Release\FactoryMethod.dll
+C:\Projetos\BiometricsLab - v5\Factory\obj\Release\FactoryMethod.pdb
+C:\Projetos\BiometricsLab - v6\Factory\bin\Release\FactoryMethod.dll
+C:\Projetos\BiometricsLab - v6\Factory\bin\Release\FactoryMethod.pdb
+C:\Projetos\BiometricsLab - v6\Factory\bin\Release\Image.Filters.dll
+C:\Projetos\BiometricsLab - v6\Factory\bin\Release\AForge.Imaging.dll
+C:\Projetos\BiometricsLab - v6\Factory\bin\Release\AForge.dll
+C:\Projetos\BiometricsLab - v6\Factory\bin\Release\AForge.Math.dll
+C:\Projetos\BiometricsLab - v6\Factory\bin\Release\Image.Filters.pdb
+C:\Projetos\BiometricsLab - v6\Factory\bin\Release\AForge.Imaging.xml
+C:\Projetos\BiometricsLab - v6\Factory\bin\Release\AForge.xml
+C:\Projetos\BiometricsLab - v6\Factory\bin\Release\AForge.Math.xml
+C:\Projetos\BiometricsLab - v6\Factory\obj\Release\FactoryMethod.csprojResolveAssemblyReference.cache
+C:\Projetos\BiometricsLab - v6\Factory\obj\Release\FactoryMethod.dll
+C:\Projetos\BiometricsLab - v6\Factory\obj\Release\FactoryMethod.pdb

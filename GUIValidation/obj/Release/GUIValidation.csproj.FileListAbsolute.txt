@@ -1,0 +1,20 @@
+C:\Projetos\BiometricsLab\GUIValidation\bin\Release\GUIValidation.dll
+C:\Projetos\BiometricsLab\GUIValidation\bin\Release\GUIValidation.pdb
+C:\Projetos\BiometricsLab\GUIValidation\obj\Release\GUIValidation.dll
+C:\Projetos\BiometricsLab\GUIValidation\obj\Release\GUIValidation.pdb
+C:\Projetos\BiometricsLab - v3\GUIValidation\bin\Release\GUIValidation.dll
+C:\Projetos\BiometricsLab - v3\GUIValidation\bin\Release\GUIValidation.pdb
+C:\Projetos\BiometricsLab - v3\GUIValidation\obj\Release\GUIValidation.dll
+C:\Projetos\BiometricsLab - v3\GUIValidation\obj\Release\GUIValidation.pdb
+C:\Projetos\BiometricsLab - v4\GUIValidation\bin\Release\GUIValidation.dll
+C:\Projetos\BiometricsLab - v4\GUIValidation\bin\Release\GUIValidation.pdb
+C:\Projetos\BiometricsLab - v4\GUIValidation\obj\Release\GUIValidation.dll
+C:\Projetos\BiometricsLab - v4\GUIValidation\obj\Release\GUIValidation.pdb
+C:\Projetos\BiometricsLab - v5\GUIValidation\bin\Release\GUIValidation.dll
+C:\Projetos\BiometricsLab - v5\GUIValidation\bin\Release\GUIValidation.pdb
+C:\Projetos\BiometricsLab - v5\GUIValidation\obj\Release\GUIValidation.dll
+C:\Projetos\BiometricsLab - v5\GUIValidation\obj\Release\GUIValidation.pdb
+C:\Projetos\BiometricsLab - v6\GUIValidation\bin\Release\GUIValidation.dll
+C:\Projetos\BiometricsLab - v6\GUIValidation\bin\Release\GUIValidation.pdb
+C:\Projetos\BiometricsLab - v6\GUIValidation\obj\Release\GUIValidation.dll
+C:\Projetos\BiometricsLab - v6\GUIValidation\obj\Release\GUIValidation.pdb

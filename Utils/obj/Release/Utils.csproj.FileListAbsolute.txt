@@ -1,0 +1,20 @@
+C:\Projetos\BiometricsLab\Utils\bin\Release\Utils.dll
+C:\Projetos\BiometricsLab\Utils\bin\Release\Utils.pdb
+C:\Projetos\BiometricsLab\Utils\obj\Release\Utils.dll
+C:\Projetos\BiometricsLab\Utils\obj\Release\Utils.pdb
+C:\Projetos\BiometricsLab - v3\Utils\bin\Release\Utils.dll
+C:\Projetos\BiometricsLab - v3\Utils\bin\Release\Utils.pdb
+C:\Projetos\BiometricsLab - v3\Utils\obj\Release\Utils.dll
+C:\Projetos\BiometricsLab - v3\Utils\obj\Release\Utils.pdb
+C:\Projetos\BiometricsLab - v4\Utils\bin\Release\Utils.dll
+C:\Projetos\BiometricsLab - v4\Utils\bin\Release\Utils.pdb
+C:\Projetos\BiometricsLab - v4\Utils\obj\Release\Utils.dll
+C:\Projetos\BiometricsLab - v4\Utils\obj\Release\Utils.pdb
+C:\Projetos\BiometricsLab - v5\Utils\bin\Release\Utils.dll
+C:\Projetos\BiometricsLab - v5\Utils\bin\Release\Utils.pdb
+C:\Projetos\BiometricsLab - v5\Utils\obj\Release\Utils.dll
+C:\Projetos\BiometricsLab - v5\Utils\obj\Release\Utils.pdb
+C:\Projetos\BiometricsLab - v6\Utils\bin\Release\Utils.dll
+C:\Projetos\BiometricsLab - v6\Utils\bin\Release\Utils.pdb
+C:\Projetos\BiometricsLab - v6\Utils\obj\Release\Utils.dll
+C:\Projetos\BiometricsLab - v6\Utils\obj\Release\Utils.pdb

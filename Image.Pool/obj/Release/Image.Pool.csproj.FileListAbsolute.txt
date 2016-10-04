@@ -1,0 +1,20 @@
+C:\Projetos\BiometricsLab\Image.Pool\bin\Release\Image.Pool.dll
+C:\Projetos\BiometricsLab\Image.Pool\bin\Release\Image.Pool.pdb
+C:\Projetos\BiometricsLab\Image.Pool\obj\Release\Image.Pool.dll
+C:\Projetos\BiometricsLab\Image.Pool\obj\Release\Image.Pool.pdb
+C:\Projetos\BiometricsLab - v3\Image.Pool\bin\Release\Image.Pool.dll
+C:\Projetos\BiometricsLab - v3\Image.Pool\bin\Release\Image.Pool.pdb
+C:\Projetos\BiometricsLab - v3\Image.Pool\obj\Release\Image.Pool.dll
+C:\Projetos\BiometricsLab - v3\Image.Pool\obj\Release\Image.Pool.pdb
+C:\Projetos\BiometricsLab - v4\Image.Pool\bin\Release\Image.Pool.dll
+C:\Projetos\BiometricsLab - v4\Image.Pool\bin\Release\Image.Pool.pdb
+C:\Projetos\BiometricsLab - v4\Image.Pool\obj\Release\Image.Pool.dll
+C:\Projetos\BiometricsLab - v4\Image.Pool\obj\Release\Image.Pool.pdb
+C:\Projetos\BiometricsLab - v5\Image.Pool\bin\Release\Image.Pool.dll
+C:\Projetos\BiometricsLab - v5\Image.Pool\bin\Release\Image.Pool.pdb
+C:\Projetos\BiometricsLab - v5\Image.Pool\obj\Release\Image.Pool.dll
+C:\Projetos\BiometricsLab - v5\Image.Pool\obj\Release\Image.Pool.pdb
+C:\Projetos\BiometricsLab - v6\Image.Pool\bin\Release\Image.Pool.dll
+C:\Projetos\BiometricsLab - v6\Image.Pool\bin\Release\Image.Pool.pdb
+C:\Projetos\BiometricsLab - v6\Image.Pool\obj\Release\Image.Pool.dll
+C:\Projetos\BiometricsLab - v6\Image.Pool\obj\Release\Image.Pool.pdb

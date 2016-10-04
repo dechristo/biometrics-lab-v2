@@ -1,0 +1,8 @@
+C:\Projetos\BiometricsLab\Image.Pool\bin\Debug\Image.Pool.dll
+C:\Projetos\BiometricsLab\Image.Pool\bin\Debug\Image.Pool.pdb
+C:\Projetos\BiometricsLab\Image.Pool\obj\Debug\Image.Pool.dll
+C:\Projetos\BiometricsLab\Image.Pool\obj\Debug\Image.Pool.pdb
+C:\Projetos\BiometricsLab - v5\Image.Pool\bin\Debug\Image.Pool.dll
+C:\Projetos\BiometricsLab - v5\Image.Pool\bin\Debug\Image.Pool.pdb
+C:\Projetos\BiometricsLab - v5\Image.Pool\obj\Debug\Image.Pool.dll
+C:\Projetos\BiometricsLab - v5\Image.Pool\obj\Debug\Image.Pool.pdb

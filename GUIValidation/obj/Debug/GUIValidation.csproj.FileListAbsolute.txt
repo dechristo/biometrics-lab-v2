@@ -1,0 +1,8 @@
+C:\Projetos\BiometricsLab\GUIValidation\bin\Debug\GUIValidation.dll
+C:\Projetos\BiometricsLab\GUIValidation\bin\Debug\GUIValidation.pdb
+C:\Projetos\BiometricsLab\GUIValidation\obj\Debug\GUIValidation.dll
+C:\Projetos\BiometricsLab\GUIValidation\obj\Debug\GUIValidation.pdb
+C:\Projetos\BiometricsLab - v5\GUIValidation\bin\Debug\GUIValidation.dll
+C:\Projetos\BiometricsLab - v5\GUIValidation\bin\Debug\GUIValidation.pdb
+C:\Projetos\BiometricsLab - v5\GUIValidation\obj\Debug\GUIValidation.dll
+C:\Projetos\BiometricsLab - v5\GUIValidation\obj\Debug\GUIValidation.pdb

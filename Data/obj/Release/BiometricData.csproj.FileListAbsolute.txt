@@ -1,0 +1,21 @@
+C:\Projetos\BiometricsLab\Data\bin\Release\BiometricData.dll
+C:\Projetos\BiometricsLab\Data\bin\Release\BiometricData.pdb
+C:\Projetos\BiometricsLab\Data\obj\Release\BiometricData.dll
+C:\Projetos\BiometricsLab\Data\obj\Release\BiometricData.pdb
+C:\Projetos\BiometricsLab - v3\Data\bin\Release\BiometricData.dll
+C:\Projetos\BiometricsLab - v3\Data\bin\Release\BiometricData.pdb
+C:\Projetos\BiometricsLab - v3\Data\obj\Release\BiometricData.dll
+C:\Projetos\BiometricsLab - v3\Data\obj\Release\BiometricData.pdb
+C:\Projetos\BiometricsLab - v4\Data\bin\Release\BiometricData.dll
+C:\Projetos\BiometricsLab - v4\Data\bin\Release\BiometricData.pdb
+C:\Projetos\BiometricsLab - v4\Data\obj\Release\BiometricData.dll
+C:\Projetos\BiometricsLab - v4\Data\obj\Release\BiometricData.pdb
+C:\Projetos\BiometricsLab - v5\Data\bin\Release\BiometricData.dll
+C:\Projetos\BiometricsLab - v5\Data\bin\Release\BiometricData.pdb
+C:\Projetos\BiometricsLab - v5\Data\obj\Release\BiometricData.dll
+C:\Projetos\BiometricsLab - v5\Data\obj\Release\BiometricData.pdb
+C:\Projetos\BiometricsLab - v5\Data\obj\Release\BiometricData.csprojResolveAssemblyReference.cache
+C:\Projetos\BiometricsLab - v6\Data\bin\Release\BiometricData.dll
+C:\Projetos\BiometricsLab - v6\Data\bin\Release\BiometricData.pdb
+C:\Projetos\BiometricsLab - v6\Data\obj\Release\BiometricData.dll
+C:\Projetos\BiometricsLab - v6\Data\obj\Release\BiometricData.pdb

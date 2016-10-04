@@ -1,0 +1,12 @@
+C:\Projetos\BiometricsLab\Utils\bin\Debug\Utils.dll
+C:\Projetos\BiometricsLab\Utils\bin\Debug\Utils.pdb
+C:\Projetos\BiometricsLab\Utils\obj\Debug\Utils.dll
+C:\Projetos\BiometricsLab\Utils\obj\Debug\Utils.pdb
+C:\Projetos\BiometricsLab - v4\Utils\bin\Debug\Utils.dll
+C:\Projetos\BiometricsLab - v4\Utils\bin\Debug\Utils.pdb
+C:\Projetos\BiometricsLab - v4\Utils\obj\Debug\Utils.dll
+C:\Projetos\BiometricsLab - v4\Utils\obj\Debug\Utils.pdb
+C:\Projetos\BiometricsLab - v5\Utils\bin\Debug\Utils.dll
+C:\Projetos\BiometricsLab - v5\Utils\bin\Debug\Utils.pdb
+C:\Projetos\BiometricsLab - v5\Utils\obj\Debug\Utils.dll
+C:\Projetos\BiometricsLab - v5\Utils\obj\Debug\Utils.pdb

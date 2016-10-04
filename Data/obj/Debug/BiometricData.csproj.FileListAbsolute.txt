@@ -1,0 +1,9 @@
+C:\Projetos\BiometricsLab\Data\bin\Debug\BiometricData.dll
+C:\Projetos\BiometricsLab\Data\bin\Debug\BiometricData.pdb
+C:\Projetos\BiometricsLab\Data\obj\Debug\BiometricData.dll
+C:\Projetos\BiometricsLab\Data\obj\Debug\BiometricData.pdb
+C:\Projetos\BiometricsLab - v5\Data\bin\Debug\BiometricData.dll
+C:\Projetos\BiometricsLab - v5\Data\bin\Debug\BiometricData.pdb
+C:\Projetos\BiometricsLab - v5\Data\obj\Debug\BiometricData.dll
+C:\Projetos\BiometricsLab - v5\Data\obj\Debug\BiometricData.pdb
+C:\Projetos\BiometricsLab - v5\Data\obj\Debug\BiometricData.csprojResolveAssemblyReference.cache
