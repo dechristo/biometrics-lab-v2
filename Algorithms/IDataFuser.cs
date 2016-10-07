@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using BiometricData;
+
 namespace Algorithms
 {
     interface IDataFuser
-    {
-        String FuseTranningData();
-        String FuseTestingData();        
+    {        
+        String FuseData(string dataType);             
     }
 }

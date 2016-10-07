@@ -1,7 +1,5 @@
 C:\Projetos\BiometricsLab - v6\ImageProcessor\obj\x86\Release\Images.csprojResolveAssemblyReference.cache
 C:\Projetos\BiometricsLab - v6\ImageProcessor\bin\Release\HandGeometry.cs
-C:\Projetos\BiometricsLab - v6\ImageProcessor\bin\Release\ImageProcessor.dll
-C:\Projetos\BiometricsLab - v6\ImageProcessor\bin\Release\ImageProcessor.pdb
 C:\Projetos\BiometricsLab - v6\ImageProcessor\bin\Release\AForge.dll
 C:\Projetos\BiometricsLab - v6\ImageProcessor\bin\Release\AForge.Imaging.dll
 C:\Projetos\BiometricsLab - v6\ImageProcessor\bin\Release\Algorithms.dll
@@ -16,7 +14,10 @@ C:\Projetos\BiometricsLab - v6\ImageProcessor\bin\Release\AForge.xml
 C:\Projetos\BiometricsLab - v6\ImageProcessor\bin\Release\AForge.Imaging.xml
 C:\Projetos\BiometricsLab - v6\ImageProcessor\bin\Release\BiometricData.pdb
 C:\Projetos\BiometricsLab - v6\ImageProcessor\bin\Release\AForge.Math.xml
-C:\Projetos\BiometricsLab - v6\ImageProcessor\obj\x86\Release\ImageProcessor.dll
-C:\Projetos\BiometricsLab - v6\ImageProcessor\obj\x86\Release\ImageProcessor.pdb
 C:\Projetos\BiometricsLab - v6\ImageProcessor\bin\Release\Utils.dll
 C:\Projetos\BiometricsLab - v6\ImageProcessor\bin\Release\Utils.pdb
+C:\Projetos\BiometricsLab - v6\ImageProcessor\bin\Release\Images.dll
+C:\Projetos\BiometricsLab - v6\ImageProcessor\bin\Release\Images.pdb
+C:\Projetos\BiometricsLab - v6\ImageProcessor\bin\Release\Emgu.CV.World.dll
+C:\Projetos\BiometricsLab - v6\ImageProcessor\obj\x86\Release\Images.dll
+C:\Projetos\BiometricsLab - v6\ImageProcessor\obj\x86\Release\Images.pdb

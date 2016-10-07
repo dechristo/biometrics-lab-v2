@@ -8,7 +8,7 @@ namespace Utils
 {
     public class OutputterTxt : Outputter
     {
-        public override void SaveTrainningData(string data)
+        protected override void SaveTrainningData(string data)
         {
             StreamWriter sw = new StreamWriter("C:\\libsvm-3.21\\windows\\hand_bio", true);
             if(data != string.Empty)
@@ -16,11 +16,11 @@ namespace Utils
             sw.Close();
         }
 
-        public override void SaveTestingData(string data)
+        protected override void SaveTestingData(string data)
         {
             StreamWriter sw = new StreamWriter("C:\\libsvm-3.21\\windows\\hand_bio_testing.t", true);
             sw.WriteLine(data);
             sw.Close();
-        }
+        }       
     }
 }

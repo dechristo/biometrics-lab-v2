@@ -26,8 +26,9 @@ namespace Algorithms
         public static Point GetMiddlePoint(Point[] points)
         {
             Point middle = new Point();
-            middle.X = points[0].X + (Math.Abs((points[0].X - points[1].X)) / 2);
-            middle.Y = points[0].Y + (Math.Abs((points[0].Y - points[1].Y)) / 2);
+            Point[] pOrdered = points.OrderBy(p => p.X).ToArray();
+            middle.X = pOrdered[0].X + (Math.Abs((pOrdered[0].X - pOrdered[1].X)) / 2);
+            middle.Y = pOrdered[0].Y + (Math.Abs((pOrdered[0].Y - pOrdered[1].Y)) / 2);
 
             return middle;
         }

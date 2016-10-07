@@ -53,6 +53,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IImageProcessor.cs" />
+    <Compile Include="IImageProcessorMediator.cs" />
     <Compile Include="ImageProcessor.cs" />
     <Compile Include="ImageProcessorMediator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -62,6 +64,10 @@
       <Project>{E7AEE8C0-736A-412F-871C-DEE46B0D3298}</Project>
       <Name>Algorithms</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Data\BiometricData.csproj">
+      <Project>{FD3A1B03-3597-4BBF-99F2-3D459970E0F9}</Project>
+      <Name>BiometricData</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Factory\FactoryMethod.csproj">
       <Project>{4C63FE03-9563-48DC-80F0-C7F925AB3E13}</Project>
       <Name>FactoryMethod</Name>
@@ -69,6 +75,10 @@
     <ProjectReference Include="..\Image.Filters\Image.Filters.csproj">
       <Project>{E4D17DC3-F78D-4087-963D-E245B1867E7B}</Project>
       <Name>Image.Filters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utils\Utils.csproj">
+      <Project>{8F3B39D1-9BA6-425E-8FBF-DDA2099E4D8F}</Project>
+      <Name>Utils</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

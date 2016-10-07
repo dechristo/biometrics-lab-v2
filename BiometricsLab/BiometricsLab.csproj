@@ -58,18 +58,6 @@
     <Compile Include="frmAbout.Designer.cs">
       <DependentUpon>frmAbout.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmExploreHandGeometry.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmExploreHandGeometry.Designer.cs">
-      <DependentUpon>frmExploreHandGeometry.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmHandContour.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmHandContour.Designer.cs">
-      <DependentUpon>frmHandContour.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,12 +83,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEdgeDetection.resx">
       <DependentUpon>frmEdgeDetection.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmExploreHandGeometry.resx">
-      <DependentUpon>frmExploreHandGeometry.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmHandContour.resx">
-      <DependentUpon>frmHandContour.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -128,14 +110,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Algorithms\Algorithms.csproj">
-      <Project>{E7AEE8C0-736A-412F-871C-DEE46B0D3298}</Project>
-      <Name>Algorithms</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Data\BiometricData.csproj">
-      <Project>{FD3A1B03-3597-4BBF-99F2-3D459970E0F9}</Project>
-      <Name>BiometricData</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Factory\FactoryMethod.csproj">
       <Project>{4C63FE03-9563-48DC-80F0-C7F925AB3E13}</Project>
       <Name>FactoryMethod</Name>

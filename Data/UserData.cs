@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using Utils;
+
 namespace BiometricData
 {
     public class UserData
@@ -53,37 +55,55 @@ namespace BiometricData
             }
         }
 
-        public void AddTranning(string key, List<double> dists)
+        public void AddTranning(string key, List<double> features, float[] fHandVeinsData)
         {
             if (this.dctUserAttributesTrainning.ContainsKey(key))
             {
-                dctUserAttributesTrainning[key].Add(dists);
+                foreach (float value in fHandVeinsData)
+                {
+                    features.Add(value);
+                }
+                dctUserAttributesTrainning[key].Add(features);                
             }
             else
             {
                 dctUserAttributesTrainning.Add(key, new List<List<double>>());
-                dctUserAttributesTrainning[key].Add(dists);
+                
+                foreach (float value in fHandVeinsData)
+                {
+                    features.Add(value);
+                }
+                dctUserAttributesTrainning[key].Add(features);
             }
         }
 
-        public void AddTesting(string key, List<double> dists)
+        public void AddTesting(string key, List<double> features, float[] fHandVeinsData)
         {
             if (this.dctUserAttributesTesting.ContainsKey(key))
             {
-                dctUserAttributesTesting[key].Add(dists);
+                foreach (float value in fHandVeinsData)
+                {
+                    features.Add(value);
+                }
+                dctUserAttributesTesting[key].Add(features);
             }
             else
             {
                 dctUserAttributesTesting.Add(key, new List<List<double>>());
-                dctUserAttributesTesting[key].Add(dists);
+
+                foreach (float value in fHandVeinsData)
+                {
+                    features.Add(value);
+                }
+                dctUserAttributesTesting[key].Add(features);
             }
         }
 
-        public void NormalizeData(string key, string type)
+        public void NormalizeHandGeometryData(string key, string type)
         {
             _normalize = new Normalization(_instance.dctUserAttributesTrainning[key][0].ToArray());
 
-            if (type.Equals("train"))
+            if (type.Equals(DataType.Trainning))
             {
                 for (int iListIndex = 1; iListIndex < _instance.dctUserAttributesTrainning[key].Count; iListIndex++)
                 {

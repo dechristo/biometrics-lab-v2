@@ -149,6 +149,7 @@
             this.binarizationToolStripMenuItem.Name = "binarizationToolStripMenuItem";
             this.binarizationToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.binarizationToolStripMenuItem.Text = "Binarization";
+            this.binarizationToolStripMenuItem.Click += new System.EventHandler(this.binarizationToolStripMenuItem_Click);
             // 
             // edgeDetectionToolStripMenuItem
             // 

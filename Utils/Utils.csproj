@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataType.cs" />
     <Compile Include="Gap.cs" />
     <Compile Include="Outputter.cs" />
     <Compile Include="OutputterTxt.cs" />

@@ -9,8 +9,7 @@ namespace Image.Filters
 {
     public class HandContour : Filter
     {
-        private Bitmap imgHandContour;
-        private Bitmap imgHandContourCut; 
+        private Bitmap imgHandContour;        
 
         public Bitmap ExtractHandContour(Bitmap img)
         {

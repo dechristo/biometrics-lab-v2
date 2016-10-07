@@ -12,27 +12,53 @@ using AForge.Imaging.Filters;
 
 namespace Images
 {
-    public class ImageProcessor
+
+    /*
+     * TODO: create a separate methor to GET the data (features) and to DRAW the data. use a deisng pattern: mediator?      
+     */
+
+    public class ImageProcessor : IImageProcessor
     {
         System.Drawing.Image _imgOriginal;
         string _fileLabel;
         string _type;
         Bitmap _handCountour;
         Graphics _graphicsControl;
-        HandGeometry _handGeometry;
+        HandGeometry _handGeometry = null;
+        HandPalmVeins _handPalmVeins = null;
 
         public ImageProcessor(System.Drawing.Image img, string fileLabel, string type)
         {
             this._imgOriginal = img;
             this._fileLabel = fileLabel;
-            this._type = type;
+            this._type = type;            
+        }
+
+        public string FileLabel
+        {
+            get
+            {
+                return this._fileLabel;
+            }
+            set
+            {
+                this._fileLabel = value;
+            }
+        }
+
+        public HandGeometry HandGeometryData
+        {
+            get
+            {
+                return this._handGeometry;
+            }
         }
 
         /**
          * 1 - Gray Scale
          * 2 - Binarization
          * 3 - Edge Detection
-         * 4 - Blob extractor (hand contour)         * 
+         * 4 - Blob extractor (hand contour)         
          **/
         public Bitmap ApplyPrimaryFilters()
         {
@@ -156,9 +182,15 @@ namespace Images
                 _graphicsControl.DrawLine(new Pen(Color.Orange, 1), points[0], points[1]);
             }
         }
-    }
 
-    /*
-     * TODO: cereate a separate methor to GET the data (features) and to DRAW the data. use a deisng pattern: mediator?
-     * */
+        public float[] ExtractHandPalmVeinsData()
+        {
+            float[] fHoGData = null;
+            this._handPalmVeins = new HandPalmVeins(this._imgOriginal);
+            _handPalmVeins.ExtractHandPalmROI(_handGeometry.HandCentroid);
+            fHoGData = _handPalmVeins.ComputeHoG();
+
+            return fHoGData;
+        }
+    }
 }

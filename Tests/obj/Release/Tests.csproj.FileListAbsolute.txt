@@ -1,0 +1,4 @@
+C:\Projetos\BiometricsLab - v6\Tests\bin\Release\Tests.dll
+C:\Projetos\BiometricsLab - v6\Tests\bin\Release\Tests.pdb
+C:\Projetos\BiometricsLab - v6\Tests\obj\Release\Tests.dll
+C:\Projetos\BiometricsLab - v6\Tests\obj\Release\Tests.pdb

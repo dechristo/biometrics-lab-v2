@@ -19,3 +19,6 @@ C:\Projetos\BiometricsLab - v6\Data\bin\Release\BiometricData.dll
 C:\Projetos\BiometricsLab - v6\Data\bin\Release\BiometricData.pdb
 C:\Projetos\BiometricsLab - v6\Data\obj\Release\BiometricData.dll
 C:\Projetos\BiometricsLab - v6\Data\obj\Release\BiometricData.pdb
+C:\Projetos\BiometricsLab - v6\Data\obj\Release\BiometricData.csprojResolveAssemblyReference.cache
+C:\Projetos\BiometricsLab - v6\Data\bin\Release\Utils.dll
+C:\Projetos\BiometricsLab - v6\Data\bin\Release\Utils.pdb

@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utils", "Utils\Utils.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Images", "ImageProcessor\Images.csproj", "{38F0D183-CD05-4122-97C8-F2FA01A78977}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{5B96D744-96EE-4970-9B34-626E947A09F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -119,6 +121,16 @@ Global
 		{38F0D183-CD05-4122-97C8-F2FA01A78977}.Release|Mixed Platforms.Build.0 = Release|x86
 		{38F0D183-CD05-4122-97C8-F2FA01A78977}.Release|x86.ActiveCfg = Release|x86
 		{38F0D183-CD05-4122-97C8-F2FA01A78977}.Release|x86.Build.0 = Release|x86
+		{5B96D744-96EE-4970-9B34-626E947A09F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B96D744-96EE-4970-9B34-626E947A09F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B96D744-96EE-4970-9B34-626E947A09F1}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{5B96D744-96EE-4970-9B34-626E947A09F1}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{5B96D744-96EE-4970-9B34-626E947A09F1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5B96D744-96EE-4970-9B34-626E947A09F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B96D744-96EE-4970-9B34-626E947A09F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B96D744-96EE-4970-9B34-626E947A09F1}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{5B96D744-96EE-4970-9B34-626E947A09F1}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{5B96D744-96EE-4970-9B34-626E947A09F1}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

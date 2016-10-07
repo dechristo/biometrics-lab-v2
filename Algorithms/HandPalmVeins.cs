@@ -6,55 +6,85 @@ using System.Text;
 
 namespace Algorithms
 {
-    class HandPalmVeins
+   public class HandPalmVeins : IHandPalmVeins
     {
-        Bitmap _imgHand = null;
-        Bitmap _imgPalm = null;
+        Bitmap _imgHand = null;        
+        Bitmap _roi = null;
         HoG _hog = null;
 
-        public void FingerVeins(Bitmap imgHand)
+        public HandPalmVeins(Image imgHand)
         {
-            this._imgHand = imgHand;
+            this._imgHand = new Bitmap(imgHand);
             _hog = new HoG(new Size(68, 64), new Size(2, 2));
         }
 
-        public Bitmap FindHandPalmROI()
+        public Bitmap ROI
         {
-            int roiWidth = 160;
-            int roiHeight = 120;
-            Bitmap roi = new Bitmap(roiWidth, roiHeight, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
-            for (int x = 0; x < roiWidth; x++)
+            get
             {
-                for (int y = 0; y < roiHeight; y++)
-                {
-                    roi.SetPixel(x, y, Color.White);
-                }
+                return this._roi;
             }
+        }
 
-            //left part -> centroid left
-            for (int x = 0; x < roiWidth / 2; x++)
+        public Bitmap ExtractHandPalmROI(Point pCentroid)
+        {
+            try
             {
-                for (int y = 0; y < roiHeight / 2; y++)
-                {
-                    roi.SetPixel(roiWidth / 2 - x, roiHeight / 2 - y, imgGrey.GetPixel(pCentroid.X - x, pCentroid.Y - y)); //top
-                    roi.SetPixel(roiWidth / 2 - x, roiHeight / 2 + y, imgGrey.GetPixel(pCentroid.X - x, pCentroid.Y + y)); //bottom
-                }
-            }
+                int roiWidth = 160;
+                int roiHeight = 120;
+                
+                Bitmap roi = new Bitmap(roiWidth, roiHeight, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
 
-            //right part -> centroid right
-            for (int x = 0; x < roiWidth / 2; x++)
-            {
-                for (int y = 0; y < roiHeight / 2; y++)
+                for (int x = 0; x < roiWidth; x++)
                 {
-                    roi.SetPixel(roiWidth / 2 + x, roiHeight / 2 - y, imgGrey.GetPixel(pCentroid.X + x, pCentroid.Y - y)); //top
-                    roi.SetPixel(roiWidth / 2 + x, roiHeight / 2 + y, imgGrey.GetPixel(pCentroid.X + x, pCentroid.Y + y)); //bottom
+                    for (int y = 0; y < roiHeight; y++)
+                    {
+                        roi.SetPixel(x, y, Color.White);
+                    }
                 }
+
+                //left part -> centroid left
+                for (int x = 0; x < roiWidth / 2; x++)
+                {
+                    for (int y = 0; y < roiHeight / 2; y++)
+                    {
+                        roi.SetPixel(roiWidth / 2 - x, roiHeight / 2 - y, this._imgHand.GetPixel(pCentroid.X - x, pCentroid.Y - y)); //top
+                        roi.SetPixel(roiWidth / 2 - x, roiHeight / 2 + y, this._imgHand.GetPixel(pCentroid.X - x, pCentroid.Y + y)); //bottom
+                    }
+                }
+
+                //right part -> centroid right
+                for (int x = 0; x < roiWidth / 2; x++)
+                {
+                    for (int y = 0; y < roiHeight / 2; y++)
+                    {
+                        roi.SetPixel(roiWidth / 2 + x, roiHeight / 2 - y, this._imgHand.GetPixel(pCentroid.X + x, pCentroid.Y - y)); //top
+                        roi.SetPixel(roiWidth / 2 + x, roiHeight / 2 + y, this._imgHand.GetPixel(pCentroid.X + x, pCentroid.Y + y)); //bottom
+                    }
+                }
+                this._roi = roi;
+                return this._roi;
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error:" + ex.Message);
+                return null;
+            }            
         }
 
         public float[] ComputeHoG()
         {
-            return _hog.Compute(_imgPalm);
+            float[] fHogData = null;
+            try
+            {
+                fHogData = _hog.Compute(this._roi);
+                return fHogData;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error:" + ex.Message);
+                return null;
+            }
         }
     }
 }

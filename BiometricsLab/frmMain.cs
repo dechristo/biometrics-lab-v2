@@ -6,21 +6,11 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
-using Algorithms;
 using Utils;
-using BiometricData;
 using Images;
 
 namespace BiometricsLab
-{   /*
-     * Image indexes:
-     *  0 - trainning
-     *  1 - trainning
-     *  2 - trainning
-     *  3 - trainning
-     *  4 - testing
-     *  5 - testing 
-     */
+{  
     public partial class frmMain : Form
     {
         #region Private Members
@@ -32,7 +22,8 @@ namespace BiometricsLab
         //private Thread threadTrainning;
         //private Thread threadTesting;
         BackgroundWorker bgW = new BackgroundWorker();
-        private StringBuilder data = new StringBuilder();        
+        private StringBuilder data = new StringBuilder();
+        private ImageProcessorMediator _imageProcessorMediator = null;
 
         #endregion
 
@@ -44,7 +35,7 @@ namespace BiometricsLab
 
            // threadTrainning = new Thread(LoadTrainningPictures);
             //threadTesting = new Thread(LoadTestingPictures);
-        }
+        }      
 
         #endregion
 
@@ -124,39 +115,28 @@ namespace BiometricsLab
                 {
                     this.loadedImages[fileLabel]++;
                 }
-
               
                 if(imgIndex == 1)
-                this.pbTra1.Image = ProcessImage(this.imgOriginal, fileLabel, "train");
+                this.pbTra1.Image = ProcessImage(this.imgOriginal, fileLabel, DataType.Trainning);
 
                 if(imgIndex == 2)
-                this.pbTra2.Image = ProcessImage(this.imgOriginal, fileLabel, "train");
+                    this.pbTra2.Image = ProcessImage(this.imgOriginal, fileLabel, DataType.Trainning);
 
                 if (imgIndex == 3)
-                    this.pbTra3.Image = ProcessImage(this.imgOriginal, fileLabel, "train");
+                    this.pbTra3.Image = ProcessImage(this.imgOriginal, fileLabel, DataType.Trainning);
 
                 if (imgIndex == 4)
-                    this.pbTra4.Image = ProcessImage(this.imgOriginal, fileLabel, "train");
+                    this.pbTra4.Image = ProcessImage(this.imgOriginal, fileLabel, DataType.Trainning);
 
                 if (imgIndex == 5)
-                    this.pbTra5.Image = ProcessImage(this.imgOriginal, fileLabel, "train");
+                    this.pbTra5.Image = ProcessImage(this.imgOriginal, fileLabel, DataType.Trainning);
 
                 if (imgIndex == 6)
-                    this.pbTra6.Image = ProcessImage(this.imgOriginal, fileLabel, "train");
+                    this.pbTra6.Image = ProcessImage(this.imgOriginal, fileLabel, DataType.Trainning);
                // this.pbTra1.Refresh(); invoke required here
                 imgIndex++;                
             }
-
-            //*************** save data put on a method
             
-            DataFuser df = new DataFuser(UserData.Instance);
-            string data = df.FuseTranningData();
-           // string data = df.FuseVeinsData(handPalmVeinData);
-            OutputterTxt ot = new OutputterTxt();            
-            ot.SaveTrainningData(data);
-
-            //*******************************
-
             if (this.richTextBox1.InvokeRequired)
             {
                 this.richTextBox1.BeginInvoke((MethodInvoker)delegate() { this.richTextBox1.AppendText("Trainning ended\n"); });
@@ -175,7 +155,7 @@ namespace BiometricsLab
                 this.richTextBox1.AppendText("Saving trainning data...\n");
             }
 
-            //this.SaveData("train");
+            _imageProcessorMediator.SaveUserData(DataType.Trainning);
 
             if (this.richTextBox1.InvokeRequired)
             {
@@ -184,7 +164,7 @@ namespace BiometricsLab
             else
             {
                 this.richTextBox1.AppendText("Trainning data saved.\n");
-            }
+            }            
         }
 
         private void LoadTestingPictures(Object sender, RunWorkerCompletedEventArgs e)
@@ -245,35 +225,25 @@ namespace BiometricsLab
 
 
                 if (imgIndex == 1)
-                    this.pbTra1.Image = ProcessImage(this.imgOriginal, fileLabel, "test");
+                    this.pbTra1.Image = ProcessImage(this.imgOriginal, fileLabel, DataType.Testing);
 
                 if (imgIndex == 2)
-                    this.pbTra2.Image = ProcessImage(this.imgOriginal, fileLabel, "test");
+                    this.pbTra2.Image = ProcessImage(this.imgOriginal, fileLabel, DataType.Testing);
 
                 if (imgIndex == 3)
-                    this.pbTra3.Image = ProcessImage(this.imgOriginal, fileLabel, "test");
+                    this.pbTra3.Image = ProcessImage(this.imgOriginal, fileLabel, DataType.Testing);
 
                 if (imgIndex == 4)
-                    this.pbTra4.Image = ProcessImage(this.imgOriginal, fileLabel, "test");
+                    this.pbTra4.Image = ProcessImage(this.imgOriginal, fileLabel, DataType.Testing);
 
                 if (imgIndex == 5)
-                    this.pbTra5.Image = ProcessImage(this.imgOriginal, fileLabel, "test");
+                    this.pbTra5.Image = ProcessImage(this.imgOriginal, fileLabel, DataType.Testing);
 
                 if (imgIndex == 6)
-                    this.pbTra6.Image = ProcessImage(this.imgOriginal, fileLabel, "test");
+                    this.pbTra6.Image = ProcessImage(this.imgOriginal, fileLabel, DataType.Testing);
                 // this.pbTra1.Refresh(); invoke required here
                 imgIndex++;
-            }
-
-            //*************** save data put on a method
-
-            DataFuser df = new DataFuser(UserData.Instance);
-            string data = df.FuseTestingData();
-           // string data = df.FuseVeinsData(handPalmVeinData);
-            OutputterTxt ot = new OutputterTxt();
-            ot.SaveTestingData(data);
-
-            //*******************************
+            }          
 
             if (this.richTextBox1.InvokeRequired)
             {
@@ -293,7 +263,7 @@ namespace BiometricsLab
                 this.richTextBox1.AppendText("Saving testing data...\n");
             }
 
-            //this.SaveData("test");
+            _imageProcessorMediator.SaveUserData(DataType.Testing);
 
             if (this.richTextBox1.InvokeRequired)
             {
@@ -302,41 +272,25 @@ namespace BiometricsLab
             else
             {
                 this.richTextBox1.AppendText("Testing data saved.\n");
-            }
+            }            
         }      
                
         private Bitmap ProcessImage(System.Drawing.Image img, string fileLabel, string type)
         {
             try
             {
-                ImageProcessorMediator imp = new ImageProcessorMediator(img, fileLabel, type);                
-                Bitmap imgHandCountour = imp.GetProcessedImage();
+                _imageProcessorMediator = new ImageProcessorMediator(img, fileLabel, type);
+                Bitmap imgHandCountour = _imageProcessorMediator.ProcessImage(type);
              
                 return imgHandCountour;             
             }
             catch (Exception ex)
             {
-                MessageBox.Show("ERROR!", "Error processing image: " + ex.Message);
+                MessageBox.Show("Error processing image: " + ex.Message, "ERROR");
                 return null;
             }            
         }
-
-        private void SaveData(string type)
-        {
-            OutputterTxt ot = new OutputterTxt();
-            //save trainning svm input file
-            if (type.Equals("train"))
-            {
-                ot.SaveTrainningData(this.data.ToString());
-                //roi.Save("C:/palms/train" + _sFileName + ".bmp", ImageFormat.Bmp);
-            }
-            else //save testing svm input file
-            {
-                ot.SaveTestingData(this.data.ToString());
-                // roi.Save("C:/palms/test" + _sFileName + ".bmp", ImageFormat.Bmp);
-            }
-        }
-
+      
         #endregion
 
         #region Public Methods
@@ -352,5 +306,10 @@ namespace BiometricsLab
         }
          
         #endregion                       
+
+        private void binarizationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

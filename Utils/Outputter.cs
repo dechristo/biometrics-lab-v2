@@ -7,12 +7,20 @@ namespace Utils
 {
     public abstract class Outputter
     {
-        public virtual void SaveTrainningData(string data)
+        protected  virtual void SaveTrainningData(string data)
         {
         }
 
-        public virtual void SaveTestingData(string data)
+        protected virtual void SaveTestingData(string data)
         {
-        }  
+        }
+
+        public void SaveData(string dataType, string data)
+        {
+            if (dataType.Equals(DataType.Trainning))
+                this.SaveTrainningData(data);
+            else
+                this.SaveTestingData(data);
+        }
     }
 }
