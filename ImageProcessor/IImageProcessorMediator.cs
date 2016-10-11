@@ -9,6 +9,6 @@ namespace Images
     interface IImageProcessorMediator
     {
         Bitmap ProcessImage(string type);
-        void SaveUserData(string dataType);
+        void SaveUserData(string dataType, bool bFuseVeins);
     }
 }

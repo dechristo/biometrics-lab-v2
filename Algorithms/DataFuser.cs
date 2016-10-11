@@ -26,15 +26,15 @@ namespace Algorithms
             this.userData = ud;
         }
 
-        public String FuseData(string dataType)
+        public String FuseData(string dataType, bool bFuseVeins)
         {
             if(dataType.Equals(DataType.Trainning))
-                return this.FuseTranningData();
-            
-            return this.FuseTestingData();
+                return this.FuseTranningData(bFuseVeins);
+
+            return this.FuseTestingData(bFuseVeins);
         }
 
-        private String FuseTranningData()
+        private String FuseTranningData(bool bFuseVeins)
         {
             if (userData == null)
                 return "ERROR: features dictioary is null.";
@@ -50,8 +50,7 @@ namespace Algorithms
 
                     //List<double> zstandard = new List<double>();
                     //zstandard = this.ApplyZScoreStandardization(lstFeatures);
-                    List<double> minMaxNormalized = new List<double>();
-                    minMaxNormalized = MinMaxNormalization.ApplyMinMaxNormalization(lstFeatures);
+                    List<double> minMaxNormalized = bFuseVeins ?  MinMaxNormalization.ApplyMinMaxNormalization(lstFeatures) : lstFeatures;
 
                     foreach (double feature in minMaxNormalized)
                     {
@@ -67,7 +66,7 @@ namespace Algorithms
             return _sbAttributes.ToString();
         }
 
-        private String FuseTestingData()
+        private String FuseTestingData(bool bFuseVeins)
         {
             if (userData == null)
                 return "ERROR: features dictioary is null.";
@@ -83,8 +82,9 @@ namespace Algorithms
 
                     //List<double> zstandard = new List<double>();
                     //zstandard = this.ApplyZScoreStandardization(lstFeatures);
-                    List<double> minMaxNormalized = new List<double>();
-                    minMaxNormalized = MinMaxNormalization.ApplyMinMaxNormalization(lstFeatures);
+
+                    //is theres are only geometric data, no need to normalize
+                    List<double> minMaxNormalized = bFuseVeins ? MinMaxNormalization.ApplyMinMaxNormalization(lstFeatures) : lstFeatures;                   
 
                     foreach (double feature in minMaxNormalized)
                     {

@@ -15,6 +15,8 @@ namespace Algorithms
         private Size _padding;
         private Size _cellSize;
         private Size _blockSize;
+        private double min;
+        private double max;
 
         private HOGDescriptor _hogDescriptor;
 
@@ -99,6 +101,9 @@ namespace Algorithms
             Image<Bgr, Byte> imageOfInterest = new Image<Bgr,byte>(roi);    
             //float[] handPalmVeinDescriptor = hog.Compute(imageOfInterest, new Size(170, 160), new Size(2, 2));
             float[] handPalmVeinDescriptor = _hogDescriptor.Compute(imageOfInterest, new Size(68, 64), new Size(2, 2));
+
+            // min = handPalmVeinDescriptor.Min();
+            // max = handPalmVeinDescriptor.Max();
 
             return handPalmVeinDescriptor;
         }   

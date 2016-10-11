@@ -216,32 +216,39 @@ namespace Algorithms
 
         public List<Point[]> CalculateBaseLines(Bitmap img)
         {
-            //thumbs -> index
-            Point pStart = this.AdjusFirstValleyPoint(img);
-            //brings thumbs valley near to index finger left base
-            this.ValleyPointsOrdered[0] = pStart; 
-            lstHandGeometryFeatures.Add(Geometry.EuclideanDistance(pStart, ValleyPointsOrdered[_INDEX_FINGER_]));
-            this.lstBaseLines.Add(new Point[2] { pStart, ValleyPointsOrdered[_INDEX_FINGER_] });
-            
-            //index-> middle
-            lstHandGeometryFeatures.Add(Geometry.EuclideanDistance(this.ValleyPointsOrdered[_MIDDLE_FINGER_], this.ValleyPointsOrdered[_INDEX_FINGER_]));
-            this.lstBaseLines.Add(new Point[2] { this.ValleyPointsOrdered[_MIDDLE_FINGER_], this.ValleyPointsOrdered[_INDEX_FINGER_] });
-
-            //middle->ring
-            lstHandGeometryFeatures.Add(Geometry.EuclideanDistance(this.ValleyPointsOrdered[_RING_FINGER_], this.ValleyPointsOrdered[_MIDDLE_FINGER_]));
-            this.lstBaseLines.Add(new Point[2] {this.ValleyPointsOrdered[_RING_FINGER_], this.ValleyPointsOrdered[_MIDDLE_FINGER_]});
-
-            //ring->pinky
-            int iPinkyWidth = 10;
-            
-            while (img.GetPixel(this.ValleyPointsOrdered[_RING_FINGER_].X + iPinkyWidth, this.ValleyPointsOrdered[_RING_FINGER_].Y + 50).Name == "ffffffff")
+            try
             {
-                iPinkyWidth++;
-            }
-                
-            lstHandGeometryFeatures.Add(Geometry.EuclideanDistance(new Point(this.ValleyPointsOrdered[_RING_FINGER_].X, this.ValleyPointsOrdered[_RING_FINGER_].Y), new Point(this.ValleyPointsOrdered[_RING_FINGER_].X + iPinkyWidth, this.ValleyPointsOrdered[_RING_FINGER_].Y + 50)));
-            this.lstBaseLines.Add(new Point[2] {new Point(this.ValleyPointsOrdered[_RING_FINGER_].X, this.ValleyPointsOrdered[_RING_FINGER_].Y), new Point(this.ValleyPointsOrdered[_RING_FINGER_].X + iPinkyWidth, this.ValleyPointsOrdered[_RING_FINGER_].Y + 50 )});
+                //thumbs -> index
+                Point pStart = this.AdjusFirstValleyPoint(img);
+                //brings thumbs valley near to index finger left base
+                this.ValleyPointsOrdered[0] = pStart;
+                lstHandGeometryFeatures.Add(Geometry.EuclideanDistance(pStart, ValleyPointsOrdered[_INDEX_FINGER_]));
+                this.lstBaseLines.Add(new Point[2] { pStart, ValleyPointsOrdered[_INDEX_FINGER_] });
 
+                //index-> middle
+                lstHandGeometryFeatures.Add(Geometry.EuclideanDistance(this.ValleyPointsOrdered[_MIDDLE_FINGER_], this.ValleyPointsOrdered[_INDEX_FINGER_]));
+                this.lstBaseLines.Add(new Point[2] { this.ValleyPointsOrdered[_MIDDLE_FINGER_], this.ValleyPointsOrdered[_INDEX_FINGER_] });
+
+                //middle->ring
+                lstHandGeometryFeatures.Add(Geometry.EuclideanDistance(this.ValleyPointsOrdered[_RING_FINGER_], this.ValleyPointsOrdered[_MIDDLE_FINGER_]));
+                this.lstBaseLines.Add(new Point[2] { this.ValleyPointsOrdered[_RING_FINGER_], this.ValleyPointsOrdered[_MIDDLE_FINGER_] });
+
+                //ring->pinky
+                int iPinkyWidth = 10;
+
+                while (img.GetPixel(this.ValleyPointsOrdered[_RING_FINGER_].X + iPinkyWidth, this.ValleyPointsOrdered[_RING_FINGER_].Y + 50).Name == "ffffffff")
+                {
+                    iPinkyWidth++;
+                }
+
+                lstHandGeometryFeatures.Add(Geometry.EuclideanDistance(new Point(this.ValleyPointsOrdered[_RING_FINGER_].X, this.ValleyPointsOrdered[_RING_FINGER_].Y), new Point(this.ValleyPointsOrdered[_RING_FINGER_].X + iPinkyWidth, this.ValleyPointsOrdered[_RING_FINGER_].Y + 50)));
+                this.lstBaseLines.Add(new Point[2] { new Point(this.ValleyPointsOrdered[_RING_FINGER_].X, this.ValleyPointsOrdered[_RING_FINGER_].Y), new Point(this.ValleyPointsOrdered[_RING_FINGER_].X + iPinkyWidth, this.ValleyPointsOrdered[_RING_FINGER_].Y + 50) });
+            }
+            catch (Exception ex)
+            {
+                lstHandGeometryFeatures.Add(0);
+                this.lstBaseLines.Add(new Point[] {new Point(0,0), new Point(0,0)});
+            }
             return this.lstBaseLines;
         }
 
@@ -277,10 +284,18 @@ namespace Algorithms
 
         private Point[] CalculateFingerHeight(Point[] baseP, Point edge)
         {
-            Point middle = Geometry.GetMiddlePoint(baseP);
-            double distance = Geometry.EuclideanDistance(middle, edge);                  
-            lstHandGeometryFeatures.Add(distance);
-            return new Point[2]{middle, edge};
+            try
+            {
+                Point middle = Geometry.GetMiddlePoint(baseP);
+                double distance = Geometry.EuclideanDistance(middle, edge);
+                lstHandGeometryFeatures.Add(distance);
+                return new Point[2] { middle, edge };
+            }
+            catch (Exception ex)
+            {
+                lstHandGeometryFeatures.Add(0);
+                return new Point[2] { new Point(0, 0), new Point(0, 0) };
+            }
         }
 
         public List<Point[]> CalculateIndexFingerWidths(Bitmap img)
@@ -381,59 +396,67 @@ namespace Algorithms
             int iMiddleX = gap.MiddleCoordinates.X;
             int iMiddleY = gap.MiddleCoordinates.Y;
             int iYdiff = 0;
-
+                    
             for (int iGap = gap.Start; iGap < gap.Limit; iGap += gap.Step)
-            {   
-                //get contour pixels
-                Point startPoint = new Point();
-                Point endPoint = new Point();
-
-                int iMiddleXStart = iMiddleX;
-
-                //ring finger correction
-                if (fingerIndex == _RING_FINGER_)
-                    iMiddleXStart += 15;
-
-                while (img.GetPixel(iMiddleXStart, iMiddleY - iGap).Name == "ffffffff")
+            {
+                try
                 {
-                    iMiddleXStart--;
+                    //get contour pixels
+                    Point startPoint = new Point();
+                    Point endPoint = new Point();
+
+                    int iMiddleXStart = iMiddleX;
+
+                    //ring finger correction
+                    if (fingerIndex == _RING_FINGER_)
+                        iMiddleXStart += 15;
+
+                    while (img.GetPixel(iMiddleXStart, iMiddleY - iGap).Name == "ffffffff")
+                    {
+                        iMiddleXStart--;
+                    }
+
+                    startPoint.X = iMiddleXStart;
+                    startPoint.Y = iMiddleY - iGap;
+
+                    //ring finger correction
+                    if (fingerIndex == _RING_FINGER_)
+                        startPoint.Y += 5;
+
+                    //if index finger, adds inclination at start
+                    if (fingerIndex == _INDEX_FINGER_)
+                        startPoint.Y += inclination;
+
+                    int iMiddleXEnd = iMiddleX;
+
+                    //add incklination factor for middle and ring finger while searching for a black pixel.
+                    if (fingerIndex > _INDEX_FINGER_)
+                        iYdiff = inclination;
+
+                    while (img.GetPixel(iMiddleXEnd, iMiddleY - iGap + iYdiff).Name == "ffffffff")
+                    {
+                        iMiddleXEnd++;
+                    }
+                    endPoint.X = iMiddleXEnd;
+                    endPoint.Y = iMiddleY - iGap;
+
+                    //if middle or ring finger, adds inclination at start
+                    if (fingerIndex > _INDEX_FINGER_)
+                        endPoint.Y += inclination;
+
+                    //finger widths
+                    double width = Geometry.EuclideanDistance(startPoint, endPoint);
+                    lstHandGeometryFeatures.Add(width);
+                    widths.Add(new Point[2] { startPoint, endPoint });
+                    inclination = Math.Abs(endPoint.Y - startPoint.Y);
+                    iMiddleX = startPoint.X + (endPoint.X - startPoint.X) / 2;
+                    iMiddleY = startPoint.Y + (endPoint.Y - startPoint.Y) / 2;
                 }
-
-                startPoint.X = iMiddleXStart;
-                startPoint.Y = iMiddleY - iGap;
-
-                //ring finger correction
-                if (fingerIndex == _RING_FINGER_)
-                    startPoint.Y += 5;
-
-                //if index finger, adds inclination at start
-                if (fingerIndex == _INDEX_FINGER_)
-                    startPoint.Y += inclination;
-
-                int iMiddleXEnd = iMiddleX;
-                                
-                //add incklination factor for middle and ring finger while searching for a black pixel.
-                if (fingerIndex > _INDEX_FINGER_)
-                    iYdiff = inclination;
-                
-                while (img.GetPixel(iMiddleXEnd, iMiddleY - iGap + iYdiff).Name == "ffffffff")
+                catch (Exception ex)
                 {
-                    iMiddleXEnd++;
+                    lstHandGeometryFeatures.Add(0);
+                    widths.Add(new Point[2]{new Point(0,0), new Point(0,0)});
                 }
-                endPoint.X = iMiddleXEnd;
-                endPoint.Y = iMiddleY - iGap;
-
-                //if middle or ring finger, adds inclination at start
-                if (fingerIndex > _INDEX_FINGER_)
-                    endPoint.Y += inclination;
-                                
-                //finger widths
-                double width = Geometry.EuclideanDistance(startPoint, endPoint);
-                lstHandGeometryFeatures.Add(width);
-                widths.Add(new Point[2] { startPoint, endPoint });
-                inclination = Math.Abs(endPoint.Y - startPoint.Y);
-                iMiddleX = startPoint.X + (endPoint.X - startPoint.X) / 2;
-                iMiddleY = startPoint.Y + (endPoint.Y - startPoint.Y) / 2;
             }
             return widths;
         }  

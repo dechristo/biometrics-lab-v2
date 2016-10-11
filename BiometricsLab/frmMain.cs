@@ -8,6 +8,7 @@ using System.Windows.Forms;
 
 using Utils;
 using Images;
+using System.Threading;
 
 namespace BiometricsLab
 {  
@@ -34,7 +35,7 @@ namespace BiometricsLab
             InitializeComponent();            
 
            // threadTrainning = new Thread(LoadTrainningPictures);
-            //threadTesting = new Thread(LoadTestingPictures);
+           // threadTesting = new Thread(LoadTestingPictures);
         }      
 
         #endregion
@@ -155,7 +156,7 @@ namespace BiometricsLab
                 this.richTextBox1.AppendText("Saving trainning data...\n");
             }
 
-            _imageProcessorMediator.SaveUserData(DataType.Trainning);
+            _imageProcessorMediator.SaveUserData(DataType.Trainning, false);
 
             if (this.richTextBox1.InvokeRequired)
             {
@@ -167,7 +168,7 @@ namespace BiometricsLab
             }            
         }
 
-        private void LoadTestingPictures(Object sender, RunWorkerCompletedEventArgs e)
+        private void LoadTestingPictures(Object sender, RunWorkerCompletedEventArgs e)        
         {
             this.data.Clear();
 
@@ -263,7 +264,7 @@ namespace BiometricsLab
                 this.richTextBox1.AppendText("Saving testing data...\n");
             }
 
-            _imageProcessorMediator.SaveUserData(DataType.Testing);
+            _imageProcessorMediator.SaveUserData(DataType.Testing, false);
 
             if (this.richTextBox1.InvokeRequired)
             {
@@ -286,8 +287,22 @@ namespace BiometricsLab
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error processing image: " + ex.Message, "ERROR");
-                return null;
+                //MessageBox.Show("Error processing image: " + ex.Message, "ERROR");
+
+                if (this.richTextBox1.InvokeRequired)
+                {                    
+                    this.richTextBoxErrors.BeginInvoke((MethodInvoker)delegate() { this.richTextBoxErrors.AppendText("Error processing file " + fileLabel + " :"); });
+                    this.richTextBoxErrors.BeginInvoke((MethodInvoker)delegate() { this.richTextBoxErrors.AppendText(ex.Message); });
+                    this.richTextBoxErrors.BeginInvoke((MethodInvoker)delegate() { this.richTextBoxErrors.AppendText("\n\n"); });
+                    return null;
+                }
+                else
+                {
+                    this.richTextBoxErrors.AppendText("Error processing file " + fileLabel + " :");
+                    this.richTextBoxErrors.AppendText(ex.Message);
+                    this.richTextBoxErrors.AppendText("\n\n");
+                    return null;
+                }            
             }            
         }
       

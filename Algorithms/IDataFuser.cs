@@ -9,6 +9,6 @@ namespace Algorithms
 {
     interface IDataFuser
     {        
-        String FuseData(string dataType);             
+        String FuseData(string dataType, bool bFuseVeins);             
     }
 }

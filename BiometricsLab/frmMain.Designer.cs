@@ -84,6 +84,8 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.richTextBoxErrors = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -104,13 +106,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
             // 
             this.statusStrip1.Location = new System.Drawing.Point(0, 845);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1324, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1346, 22);
             this.statusStrip1.TabIndex = 8;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -128,7 +131,7 @@
             this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1324, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1346, 24);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -307,12 +310,13 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(0, 0);
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1309, 815);
+            this.tabControl1.Size = new System.Drawing.Size(1334, 815);
             this.tabControl1.TabIndex = 27;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.Controls.Add(this.groupBox5);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.button3);
@@ -323,13 +327,13 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1301, 789);
+            this.tabPage1.Size = new System.Drawing.Size(1326, 789);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Hand Geometry";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(975, 738);
+            this.button1.Location = new System.Drawing.Point(1238, 735);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(85, 32);
             this.button1.TabIndex = 38;
@@ -338,7 +342,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(977, 510);
+            this.button2.Location = new System.Drawing.Point(971, 736);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(85, 32);
             this.button2.TabIndex = 37;
@@ -347,7 +351,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(977, 472);
+            this.button3.Location = new System.Drawing.Point(971, 698);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(85, 32);
             this.button3.TabIndex = 36;
@@ -357,7 +361,7 @@
             // button4
             // 
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button4.Location = new System.Drawing.Point(975, 434);
+            this.button4.Location = new System.Drawing.Point(969, 660);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(87, 32);
             this.button4.TabIndex = 35;
@@ -370,7 +374,7 @@
             this.groupBox2.ForeColor = System.Drawing.Color.SteelBlue;
             this.groupBox2.Location = new System.Drawing.Point(975, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(320, 410);
+            this.groupBox2.Size = new System.Drawing.Size(343, 410);
             this.groupBox2.TabIndex = 28;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Log";
@@ -380,7 +384,7 @@
             this.richTextBox1.Font = new System.Drawing.Font("Arial", 7F);
             this.richTextBox1.Location = new System.Drawing.Point(6, 19);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(308, 380);
+            this.richTextBox1.Size = new System.Drawing.Size(331, 380);
             this.richTextBox1.TabIndex = 28;
             this.richTextBox1.Text = "";
             // 
@@ -472,7 +476,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1301, 789);
+            this.tabPage2.Size = new System.Drawing.Size(1326, 789);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Palm Print";
             // 
@@ -609,11 +613,31 @@
             this.pictureBox6.TabIndex = 19;
             this.pictureBox6.TabStop = false;
             // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.richTextBoxErrors);
+            this.groupBox5.ForeColor = System.Drawing.Color.Red;
+            this.groupBox5.Location = new System.Drawing.Point(975, 433);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(337, 221);
+            this.groupBox5.TabIndex = 39;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Errors";
+            // 
+            // richTextBoxErrors
+            // 
+            this.richTextBoxErrors.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.richTextBoxErrors.Location = new System.Drawing.Point(6, 19);
+            this.richTextBoxErrors.Name = "richTextBoxErrors";
+            this.richTextBoxErrors.Size = new System.Drawing.Size(325, 196);
+            this.richTextBoxErrors.TabIndex = 0;
+            this.richTextBoxErrors.Text = "";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1324, 867);
+            this.ClientSize = new System.Drawing.Size(1346, 867);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -647,6 +671,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.groupBox5.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -709,6 +734,8 @@
         private System.Windows.Forms.ToolStripMenuItem fuseHandGeometryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fusePalmPrintToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fuseAllToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.RichTextBox richTextBoxErrors;
     }
 }
 

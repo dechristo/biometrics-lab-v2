@@ -59,20 +59,28 @@ namespace BiometricData
         {
             if (this.dctUserAttributesTrainning.ContainsKey(key))
             {
-                foreach (float value in fHandVeinsData)
+                if (fHandVeinsData != null)
                 {
-                    features.Add(value);
+                    foreach (float value in fHandVeinsData)
+                    {
+                        features.Add(value);
+                    }
                 }
+
                 dctUserAttributesTrainning[key].Add(features);                
             }
             else
             {
                 dctUserAttributesTrainning.Add(key, new List<List<double>>());
-                
-                foreach (float value in fHandVeinsData)
+
+                if (fHandVeinsData != null)
                 {
-                    features.Add(value);
+                    foreach (float value in fHandVeinsData)
+                    {
+                        features.Add(value);
+                    }
                 }
+
                 dctUserAttributesTrainning[key].Add(features);
             }
         }
@@ -81,9 +89,12 @@ namespace BiometricData
         {
             if (this.dctUserAttributesTesting.ContainsKey(key))
             {
-                foreach (float value in fHandVeinsData)
+                if (fHandVeinsData != null)
                 {
-                    features.Add(value);
+                    foreach (float value in fHandVeinsData)
+                    {
+                        features.Add(value);
+                    }
                 }
                 dctUserAttributesTesting[key].Add(features);
             }
@@ -91,10 +102,14 @@ namespace BiometricData
             {
                 dctUserAttributesTesting.Add(key, new List<List<double>>());
 
-                foreach (float value in fHandVeinsData)
+                if (fHandVeinsData != null)
                 {
-                    features.Add(value);
+                    foreach (float value in fHandVeinsData)
+                    {
+                        features.Add(value);
+                    }
                 }
+
                 dctUserAttributesTesting[key].Add(features);
             }
         }

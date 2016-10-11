@@ -33,20 +33,21 @@ namespace Images
 
         public Bitmap ProcessImage(string type)
         {
-            this.Proccess(type);
+            this.Proccess(type, false);
             return this._processedImg;
         }
 
-        public void SaveUserData(string dataType)
+        public void SaveUserData(string dataType, bool bFuse)
         {
             OutputterTxt ot = new OutputterTxt();
             string userData = "";
 
             try
             {
+                
                 DataFuser df = new DataFuser(UserData.Instance);
 
-                userData = df.FuseData(dataType);
+                userData = df.FuseData(dataType, bFuse);
                 ot.SaveData(dataType, userData);
             }
             catch (Exception ex)
@@ -59,12 +60,15 @@ namespace Images
 
         #region Private methods
 
-        private string Proccess(string dataType)
+        private string Proccess(string dataType, bool bProcessVeins)
         {
             try
             {
                 this.ProcessGeometryFeatures();
-                this.ProcessTextureFeatures();
+                
+                if(bProcessVeins)
+                    this.ProcessTextureFeatures();
+
                 this.UpdateUserData(dataType);
                 return string.Empty;
             }

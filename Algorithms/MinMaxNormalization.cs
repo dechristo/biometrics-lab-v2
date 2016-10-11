@@ -13,7 +13,7 @@ namespace Algorithms
 
             foreach (double feature in features)
             {
-                double x = MinMax(feature*500, features.Min()-100, features.Max()+200);
+                double x = MinMax(feature, features.Min(), features.Max());
                 normalized.Add(x);
             }
 
@@ -22,7 +22,12 @@ namespace Algorithms
 
         private static double MinMax(double xi, double min, double max)
         {
-            double x = (xi - min) / (max - min);
+            //adjust hog extracted features scale
+            if (xi < 20)            
+                xi *= 1000 / (max/20);            
+
+            double x = (xi - min) / (max - min);                        
+
             return x;
         }
     }
